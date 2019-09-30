@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TimeZone</title>
+
+     <script type="text/javascript" src="moment.js"></script>
+    <script type="text/javascript"  src="moment1.js"></script>
+
+    <style>
+
+        body{
+            background-image: url('back.jpg');
+            background-size: cover;
+        }
+
+
+        h4{
+            color:aliceblue;
+        }
+
+
+        b{
+            color:black;
+            font-size: 35px;
+        }
+
+
+        p{
+            color:darkcyan;
+        }
+
+</style>
+
+</head>
+<body>
+                <br><br><br>
+        <div class="container">
+                <div class="row">
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-6">
+                        <center>
+                        <div class="table">
+                            <table  class="tableSytle">
+                            <thead>
+                                <tr>
+                                    <th>
+                                       <b> COUNTRY </b>
+                                    </th>
+                                    <th>
+                                        <b>  TIME </b>
+                                    </th>
+                                </tr>
+                            </thead>
+                                <tr>
+                                    <td>
+                                        <h4>India timezone: </h4> 
+                                    </td>
+                                    <td>
+                                        <p id="itime"></p>
+                                    </td>
+                                </tr>
+
+                                <tr>        
+                                <td>
+                                        <h4>Nepal timezone: </h4> 
+                                    </td>
+                                    <td>
+                                        <p id="ntime"></p>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <h4>America timezone: </h4> 
+                                    </td>
+                                    <td>
+                                        <p id="mtime"></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                           
+                 
+                                <tr>
+                                    <td>
+                                        <h4>Sydney timezone: </h4> 
+                                    </td>
+                                    <td>
+                                        <p id="stime"></p>
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <td>
+                                        <h4>London timezone: </h4> 
+                                    </td>
+                                    <td>
+                                        <p id="ltime"></p>
+                                    </td>
+                                </tr>
+
+                            </table>
+                        </center>
+                        </div>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+            </div>
+        
+        
+        
+        
+
+    <script>
+    
+    function tmzone(){
+
+             var India = moment().format("MMMM Do YYYY, h:mm:ss a");
+             var y = document.getElementById("itime");
+
+
+             var America = moment().tz("America/Los_Angeles").format("MMMM Do YYYY, h:mm:ss a");
+             var x=document.getElementById("mtime");
+
+             var Nepal = moment().tz("Asia/Kathmandu").format("MMMM Do YYYY, h:mm:ss a");
+             var a=document.getElementById("ntime");
+
+             var sydney = moment().tz("Australia/Sydney").format("MMMM Do YYYY, h:mm:ss a");
+             var sid=document.getElementById("stime");
+
+             var london = moment().tz("Europe/London").format("MMMM Do YYYY, h:mm:ss a");
+             var lid=document.getElementById("ltime");
+
+
+
+
+
+    
+            y.innerHTML = India;
+            a.innerHTML = Nepal;
+            x.innerHTML = America;
+            sid.innerHTML = sydney;
+            lid.innerHTML = london;
+
+
+
+
+    }
+      
+
+
+
+
+
+        setInterval(tmzone,1000);
+            tmzone();
+    
+    </script>
+
+    
+</body>
+</html>
